@@ -1,0 +1,86 @@
+/* Modern Liquid Glass Navbar Styles */
+.glass-nav {
+  background: linear-gradient(180deg,rgba(255, 255, 255, 0.187) 0%, rgba(0, 0, 0, 1) 100%);
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.brand-text {
+  background: linear-gradient(135deg, #ffdd00, #ff8533);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+.brand-text:hover {
+   background: linear-gradient(135deg, #ff8533, #ffdd00);
+  color: #000000 !important;
+  transform: translateX(-1px);
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.2rem;
+  transition: all 0.5s ease;
+  border-radius: 20px;
+}
+
+.glass-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.2rem;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.glass-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ff6b00 !important;
+  transform: translateY(-1px);
+}
+
+.glass-link.active {
+  background: rgba(255, 107, 0, 0.1);
+  color: #ff6b00 !important;
+}
+
+.custom-toggler {
+  border: none !important;
+  padding: 0.25rem 0.5rem;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.custom-toggler:focus {
+  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.25);
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 107, 0, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Ensure the navbar doesn't overlap content */
+:host {
+  display: block;
+}
+
+/* Additional styles for mobile */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 0.5rem;
+  }
+
+  .glass-link {
+    margin: 0.2rem 0;
+  }
+}

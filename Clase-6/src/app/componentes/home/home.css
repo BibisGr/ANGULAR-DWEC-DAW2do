@@ -1,0 +1,158 @@
+/* Main Container */
+.home-container {
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+}
+
+/* Gradient Text Effect */
+.text-gradient {
+  background: linear-gradient(45deg, #ff6b00, #ffb700);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 2s infinite;
+}
+
+/* Feature Cards */
+.feature-card {
+  border: 1px solid rgba(255, 107, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1e1e1e, #2d2d2d) !important;
+}
+
+/* Card Image Styling */
+.card-img-overlay-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+}
+
+.api-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 2rem;
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 0 10px rgba(255, 107, 0, 0.3));
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, rgba(255, 107, 0, 0.1), rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects for Images */
+.feature-card:hover .api-logo {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.5));
+}
+
+.feature-card:hover .overlay {
+  opacity: 1;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 107, 0, 0.1), rgba(255, 183, 0, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 107, 0, 0.2);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+/* Feature Icons */
+.feature-icon {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+/* Buttons */
+.btn-outline-warning {
+  border-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-warning:hover {
+  transform: translateX(5px);
+  background-color: #ff6b00;
+  border-color: #ff6b00;
+}
+
+/* Tech Stack */
+.tech-item {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+}
+
+.tech-item i {
+  transition: all 0.3s ease;
+}
+
+.tech-item:hover i {
+  color: #ff6b00 !important;
+}
+
+/* About Section */
+.about-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.3), transparent);
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .feature-card {
+    margin-bottom: 1rem;
+  }
+
+  .tech-stack {
+    flex-wrap: wrap;
+    gap: 2rem !important;
+  }
+}

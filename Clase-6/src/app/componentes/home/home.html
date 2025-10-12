@@ -1,0 +1,131 @@
+<div class="home-container bg-dark text-white min-vh-100">
+  <!-- Hero Section -->
+  <div class="hero-section py-5 mb-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="display-4 fw-bold text-gradient mb-3">Bienvenido a DAW2</h1>
+          <p class="lead text-white-50">
+            Explorando el mundo del desarrollo web con APIs populares y tecnologías modernas
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Cards -->
+  <div class="container mb-5">
+    <div class="row g-4">
+      <!-- Pokémon Card -->
+      <div routerLink="/pokemones" class="col-md-4">
+        <div class="feature-card card bg-dark h-100">
+          <div class="card-img-overlay-wrapper">
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+              class="card-img-top api-logo"
+              alt="PokéAPI Logo"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="card-body p-4">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-stars text-warning fs-1"></i>
+            </div>
+            <h3 class="card-title text-warning">Pokémon</h3>
+            <p class="card-text text-white-50">
+              Explora el mundo Pokémon con nuestra integración de la PokéAPI. Descubre información
+              detallada sobre tus Pokémon favoritos.
+            </p>
+            <a  class="btn btn-outline-warning mt-3">
+              Explorar Pokémon <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dragon Ball Card -->
+      <div routerLink="dragonBall" class="col-md-4">
+        <div class="feature-card card bg-dark h-100">
+          <div class="card-img-overlay-wrapper">
+            <img
+              src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp"
+              class="card-img-top api-logo"
+              alt="Dragon Ball Logo"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="card-body p-4">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-lightning-charge text-warning fs-1"></i>
+            </div>
+            <h3 class="card-title text-warning">Dragon Ball</h3>
+            <p class="card-text text-white-50">
+              Sumérgete en el universo de Dragon Ball. Conoce a tus personajes favoritos y sus
+              historias épicas.
+            </p>
+            <a routerLink="/dragonBall" class="btn btn-outline-warning mt-3">
+              Ver Dragon Ball <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rick & Morty Card -->
+      <div routerLink="/RickyMorty" class="col-md-4">
+        <div class="feature-card card bg-dark h-100">
+          <div class="card-img-overlay-wrapper">
+            <img
+              src="https://rick-morty-api-f92c9.web.app/img/rick_morty_logo.189ff08a.png"
+              class="card-img-top api-logo"
+              alt="Rick and Morty Logo"
+            />
+            <div class="overlay"></div>
+          </div>
+          <div class="card-body p-4">
+            <div class="feature-icon mb-3">
+              <i class="bi bi-rocket text-warning fs-1"></i>
+            </div>
+            <h3 class="card-title text-warning">Rick & Morty</h3>
+            <p class="card-text text-white-50">
+              Viaja a través de dimensiones con Rick & Morty. Descubre personajes únicos y sus locas
+              aventuras.
+            </p>
+            <a routerLink="/RickyMorty" class="btn btn-outline-warning mt-3">
+              Explorar Serie <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="about-section m-3 py-5 bg-black">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="text-warning mb-4">Sobre Nosotros</h2>
+          <p class="text-white-50 mb-4">
+            En DAW2, nos dedicamos a explorar y aprender las últimas tecnologías en el desarrollo
+            web. A través de proyectos prácticos con APIs populares, construimos experiencias web
+            modernas y atractivas.
+          </p>
+          <div class="tech-stack d-flex justify-content-center gap-4 mb-4">
+            <div class="tech-item">
+              <i class="bi bi-code-slash text-warning fs-1"></i>
+              <p class="text-white-50 small mt-2">Angular</p>
+            </div>
+            <div class="tech-item">
+              <i class="bi bi-bootstrap text-warning fs-1"></i>
+              <p class="text-white-50 small mt-2">Bootstrap</p>
+            </div>
+            <div class="tech-item">
+              <i class="bi bi-braces text-warning fs-1"></i>
+              <p class="text-white-50 small mt-2">TypeScript</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

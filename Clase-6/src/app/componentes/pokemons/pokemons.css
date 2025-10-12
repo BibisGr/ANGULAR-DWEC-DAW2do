@@ -1,0 +1,132 @@
+/* Modern Pokemon Card Styles */
+.pokemon-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a) !important;
+  border-radius: 16px !important;
+}
+
+/* Hover Effects */
+.pokemon-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 107, 0, 0.2) !important;
+}
+
+/* Pokemon Ball Animation */
+.pokemon-ball {
+  display: inline-block;
+  font-size: 3rem;
+  background: linear-gradient(45deg, #ff6b00, #ffb700);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pokemon Name Styling */
+.pokemon-name {
+  color: #ff6b00;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.pokemon-name::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: #ff6b00;
+  transition: width 0.3s ease;
+}
+
+.pokemon-card:hover .pokemon-name::after {
+  width: 100px;
+}
+
+/* Card Stats Section */
+.card-stats {
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 107, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.pokemon-card:hover .card-stats {
+  background: rgba(255, 107, 0, 0.1) !important;
+}
+
+/* Button Styling */
+.pokemon-btn {
+  border-color: #ff6b00;
+  color: #ff6b00;
+  transition: all 0.3s ease;
+}
+
+.pokemon-btn:hover {
+  background: #ff6b00;
+  border-color: #ff6b00;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* URL text styling */
+.pokemon-url {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pokemon-card:hover .pokemon-url {
+  opacity: 1;
+  color: #ff6b00;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Glowing Border Effect */
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff6a0041, #ffb70077);
+  z-index: -1;
+  border-radius: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pokemon-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Overlay for Depth */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
