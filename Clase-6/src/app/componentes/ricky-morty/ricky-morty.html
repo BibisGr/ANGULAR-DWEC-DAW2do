@@ -1,4 +1,37 @@
 <div class="container- fluid text-white m-4">
   <h2 class="text-center">Rick y Morty Component</h2>
-  <h3 class="text-center">Pesonajes Count:</h3>
+  <h3 class="text-center">Pesonajes Count: {{AllDataCharacters.info.count}}</h3>
+  <h3 class="text-center">Page Previa: {{AllDataCharacters.info.prev}}</h3>
+  <h3 class="text-center">Cant Paginas: {{AllDataCharacters.info.pages}}</h3>
+  <h3 class="text-center">Pag Siguiente: {{AllDataCharacters.info.next}}</h3>
+
+  <div class="botonera d-flex justify-content-center align-items-center">
+    <button class="btn btn-primary m-3">Primera</button>
+    <button class="btn btn-primary m-3">Anterior</button>
+    <button class="btn btn-primary m-3">Siguiente</button>
+    <button class="btn btn-primary m-3">Ultima</button>
+  </div>
+
+
+  <div class="d-flex flex-wrap justify-content-center">
+    @for (personaje of AllDataCharacters.results; track personaje.id) {
+      <div class="card m-3 card-personaje" [routerLink]="'personaje/'+ personaje.id">
+        <div class="card-title">
+          <img src="{{personaje.image}}"
+          alt="{{personaje.name}}">
+          <h4>{{personaje.name}}</h4>
+        </div>
+        <div class="card-body">
+          <p>{{personaje.origin.name}}</p>
+          <p>{{personaje.species}}</p>
+          <p>{{personaje.gender}}</p>
+          <p>{{personaje.type}}</p>
+          <p>{{personaje.status}}</p>
+        </div>
+        <div class="card-footer">
+          <div>Id: {{personaje.id}}</div>
+        </div>
+      </div>
+    }
+  </div>
 </div>

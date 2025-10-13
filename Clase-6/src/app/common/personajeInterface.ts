@@ -1,16 +1,4 @@
-export interface RickyMortyInterface {
-  info: Info
-  results: Result[]
-}
-
-export interface Info {
-  count: number
-  pages: number
-  next: string
-  prev: any
-}
-
-export interface Result {
+export interface PersonajeInterface{
   id: number
   name: string
   status: string
