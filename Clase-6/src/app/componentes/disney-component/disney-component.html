@@ -1,0 +1,89 @@
+<div class="container-fluid my-3">
+  <div class="row mb-3">
+    <div class="col-12">
+      <h1 class="text-white mb-1">Personajes Disney</h1>
+      <p class="text-white-50 small mb-0">
+        Total:
+        <strong class="text-warning">{{ AllDisneryCharacters.info.count }}</strong> &nbsp;•&nbsp;
+        Páginas: <strong class="text-warning">{{ AllDisneryCharacters.info.totalPages }}</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="row g-3 justify-content-center">
+    @for (personajeD of AllDisneryCharacters.data; track $index) {
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card disney-card h-100 text-white bg-dark">
+        <img
+          src="{{ personajeD.imageUrl }}"
+          class="card-img-top object-fit-cover"
+          alt="{{ personajeD.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-warning mb-2">{{ personajeD.name }}</h5>
+
+          <!-- filmes -->
+          <div class="small text-white-50 mb-2">
+            <!-- pregunta si el length de los filmes es distinto de 0 y si lo es entonces lista los filmes -->
+            @if (personajeD.films.length != 0) {
+            <strong>Filmes:</strong>
+            <ul class="list-unstyled mb-0">
+              @for (filme of personajeD.films; track $index){
+              <li>- {{ filme }}</li>
+              }
+            </ul>
+            } @else {
+            <strong>No tiene Filme</strong>
+            }
+          </div>
+
+          <!-- parques -->
+          <div class="small text-white-50 mb-2">
+            <!-- pregunta si el length de los parques es distinto de 0 y si lo es entonces lista los parques -->
+            @if (personajeD.parkAttractions.length != 0) {
+            <strong>Parques:</strong>
+            <ul class="list-unstyled mb-0">
+              @for (parque of personajeD.parkAttractions; track $index){
+              <li>- {{ parque }}</li>
+              }
+            </ul>
+            } @else {
+            <strong>No está en los parques</strong>
+            }
+          </div>
+
+          <!-- cortometrajes -->
+          <div class="small text-white-50 mb-2">
+            <!-- pregunta si el length de los parques es distinto de 0 y si lo es entonces lista los parques -->
+            @if (personajeD.shortFilms.length !=0) {
+            <strong>Cortometrajes:</strong>
+            <ul class="list-unstyled mb-0">
+              @for (corto of personajeD.shortFilms; track $index){
+              <li>- {{ corto }}</li>
+              }
+            </ul>
+            } @else {
+            <strong>No tiene cortometrajes</strong>
+            }
+          </div>
+
+          <div class="mt-2">
+            <a class="btn btn-sm btn-outline-warning me-2" routerLink=""
+              >Ver</a>
+            <a
+              class="btn btn-sm btn-warning"
+              href="{{ personajeD.url }}"
+              target="_blank"
+              rel="noopener"
+              >Fuente</a
+            >
+          </div>
+        </div>
+        <div class="card-footer bg-transparent border-top-0 text-white-50 small">
+          ID: {{ personajeD._id }}
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

@@ -9,4 +9,27 @@ import { RouterLink } from '@angular/router';
 })
 export class Home {
 
+  rutas: {nombreRuta:string,
+    ruta:string}[]=
+  [
+    {
+      nombreRuta: 'Pokemon API',
+      ruta: '/pokemones',
+
+
+    },
+    {
+      nombreRuta: 'Dragon Ball API',
+      ruta: '/dragonBall'
+    },
+    {
+      nombreRuta: 'Rick y Morty API',
+      ruta: '/RickyMorty'
+    },
+    {
+      nombreRuta: 'Disney API',
+      ruta: '/disney'
+    }
+  ]
+
 }

@@ -17,13 +17,15 @@
   <div class="container mb-5">
     <div class="row g-4">
       <!-- Pokémon Card -->
-      <div routerLink="/pokemones" class="col-md-4">
+
+      @for (ruta of rutas; track $index) {
+      <div routerLink="{{ruta.ruta}}" class="col-md-4">
         <div class="feature-card card bg-dark h-100">
           <div class="card-img-overlay-wrapper">
             <img
-              src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+              src=""
               class="card-img-top api-logo"
-              alt="PokéAPI Logo"
+              alt={{ruta.nombreRuta}}
             />
             <div class="overlay"></div>
           </div>
@@ -31,20 +33,19 @@
             <div class="feature-icon mb-3">
               <i class="bi bi-stars text-warning fs-1"></i>
             </div>
-            <h3 class="card-title text-warning">Pokémon</h3>
+            <h3 class="card-title text-warning">{{ruta.nombreRuta}}</h3>
             <p class="card-text text-white-50">
-              Explora el mundo Pokémon con nuestra integración de la PokéAPI. Descubre información
-              detallada sobre tus Pokémon favoritos.
+
             </p>
-            <a  class="btn btn-outline-warning mt-3">
-              Explorar Pokémon <i class="bi bi-arrow-right ms-2"></i>
+            <a class="btn btn-outline-warning mt-3">
+              Explorar  <i class="bi bi-arrow-right ms-2"></i>
             </a>
           </div>
         </div>
       </div>
-
+      }
       <!-- Dragon Ball Card -->
-      <div routerLink="dragonBall" class="col-md-4">
+      <!-- <div routerLink="dragonBall" class="col-md-4">
         <div class="feature-card card bg-dark h-100">
           <div class="card-img-overlay-wrapper">
             <img
@@ -68,10 +69,10 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Rick & Morty Card -->
-      <div routerLink="/RickyMorty" class="col-md-4">
+      <!-- <div routerLink="/RickyMorty" class="col-md-4">
         <div class="feature-card card bg-dark h-100">
           <div class="card-img-overlay-wrapper">
             <img
@@ -95,7 +96,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 

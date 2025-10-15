@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { PokemonesInterface } from '../common/pokemones';
 import { RickyMortyInterface } from '../common/ricky-morty';
 import { PersonajeInterface } from '../common/personajeInterface';
+import { DisneyInterface } from '../common/disneyInterface';
 
 // import { DragonBall } from '../common/dragon-ball';
 
@@ -17,7 +18,7 @@ export class ApiService {
   //   return this.http.get('https://pokeapi.co/api/v2/pokemon');
   // }
 
-  getAllPokemones():Observable<PokemonesInterface> {
+  getAllPokemones(): Observable<PokemonesInterface> {
     return this.http.get<PokemonesInterface>('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
   }
 
@@ -27,16 +28,24 @@ export class ApiService {
 
   private URL = 'https://rickandmortyapi.com/api/character/'
   getRickAndMortyAllCharacters()
-  :Observable<RickyMortyInterface>{
+    : Observable<RickyMortyInterface> {
     return this.http.get<RickyMortyInterface>
-    (this.URL)
+      (this.URL)
   }
 
   getRickAndMortyCharByID(id: string):
-  Observable<PersonajeInterface>{
+    Observable<PersonajeInterface> {
     return this.http.get<PersonajeInterface>
-    (this.URL + id)
+      (this.URL + id)
   }
 
+  getRickAndMortyPages(page: string):
+    Observable<RickyMortyInterface> {
+    return this.http.get<RickyMortyInterface>(page);
+  }
 
+  private URL_Disney = 'https://api.disneyapi.dev/character'
+  getAllDisneyCharacters():Observable<DisneyInterface>{
+    return this.http.get<DisneyInterface>(this.URL_Disney);
+  }
 }

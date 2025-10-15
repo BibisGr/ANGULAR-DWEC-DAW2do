@@ -6,10 +6,11 @@
   <h3 class="text-center">Pag Siguiente: {{AllDataCharacters.info.next}}</h3>
 
   <div class="botonera d-flex justify-content-center align-items-center">
-    <button class="btn btn-primary m-3">Primera</button>
-    <button class="btn btn-primary m-3">Anterior</button>
-    <button class="btn btn-primary m-3">Siguiente</button>
-    <button class="btn btn-primary m-3">Ultima</button>
+    <button class="btn btn-primary m-3" (click)="CambiaPagina('first')" >Primera</button>
+    <button class="btn btn-primary m-3" (click)="CambiaPagina('prev')" >Anterior</button>
+    <h1>P'agina actual: hola</h1>
+    <button class="btn btn-primary m-3" (click)="CambiaPagina('next')">Siguiente</button>
+    <button class="btn btn-primary m-3" (click)="CambiaPagina('last')">Ultima</button>
   </div>
 
 

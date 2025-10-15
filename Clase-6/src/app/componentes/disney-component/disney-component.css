@@ -1,0 +1,86 @@
+/* Disney component styles: orange & black theme */
+:root {
+  --accent: #ff6b00;
+  --accent-dark: #cc5500;
+  --bg-dark: #121212;
+  --card-bg: linear-gradient(180deg, rgba(26, 26, 26, 0.95), rgba(34, 34, 34, 0.9));
+}
+
+.disney-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 107, 0, 0.08);
+  background: var(--card-bg) !important;
+  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.28s ease;
+}
+
+.disney-card img.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.4s ease;
+  background: #111;
+}
+
+.disney-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 107, 0, 0.15);
+}
+
+.disney-card:hover img.card-img-top {
+  transform: scale(1.06) rotate(-1deg);
+  filter: drop-shadow(0 8px 20px rgba(255, 107, 0, 0.25));
+}
+
+.disney-card .card-body {
+  padding: 1rem;
+}
+
+.disney-card .card-title {
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.disney-card .card-text,
+.disney-card .small {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.disney-card .btn-outline-warning {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.disney-card .btn-outline-warning:hover {
+  background: var(--accent);
+  color: #111;
+  border-color: var(--accent-dark);
+}
+
+/* Footer in card */
+.disney-card .card-footer {
+  background: transparent;
+  border-top: none;
+}
+
+/* Make lists compact */
+.disney-card ul {
+  padding-left: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .disney-card img.card-img-top {
+    height: 180px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disney-card,
+  .disney-card img {
+    transition: none;
+  }
+}
