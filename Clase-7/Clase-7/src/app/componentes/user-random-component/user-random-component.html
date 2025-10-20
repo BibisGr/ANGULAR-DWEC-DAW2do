@@ -1,0 +1,60 @@
+@defer ( when RandomUser) {
+  <div class="row">
+    <div class="col-12 my-2">
+      <h3 class="text-primary text-center shadow-sm rounded-1">
+        <!-- Hay un total de {{RandomUser.results.length}} -->
+         Hay un total de {{RandomUser.info.results}}
+      </h3>
+      <h4>Semilla: {{RandomUser.info.seed}}</h4>
+      <h4>Page: {{RandomUser.info.page}}</h4>
+    </div>
+
+    <div class="container-fluid d-flex flex-wrap justify-content-evenly">
+      @for (user of RandomUser.results; track user.id) {
+        <div class="card card-shadow col-xl-3 col-lg-4 col-sm-6 m-1">
+          <div class="card-header bg-primary-subtle">
+            <div class="card-title py-2">
+              <h5>{{user.name.title}} {{user.name.first}} {{user.name.last}}</h5>
+            </div>
+          </div>
+          <div class="avatar-container mt-3">
+            <div class="img-container">
+              <div class="my-img" [ngStyle]="{
+                background:'url('+ user.picture.large+') center / 90px 90px no-repeat'}"></div>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <strong>Gender: </strong>
+              <span class="text-primary">{{user.gender}}</span>
+            </p>
+            <p class="card-text">
+              <strong>Email: </strong>
+              <span class="text-primary">{{user.email}}</span>
+            </p>
+            <p class="card-text">
+              <strong>Cell: </strong>
+              <span class="text-primary">{{user.cell}}</span>
+            </p>
+          </div>
+          <div class="card-footer">
+            <h6>
+              {{user.dob.date | date: 'longDate'}}
+            </h6>
+            <p>
+             {{user.id.name}} - {{user.id.value}}
+            </p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+}
+@placeholder (minimum 500ms) {
+  <div class="loading-container">
+    <div class="spinner-border text-info" role="status"></div>
+    <h1 class="vissually-hidden">Loading...</h1>
+  </div>
+
+}
