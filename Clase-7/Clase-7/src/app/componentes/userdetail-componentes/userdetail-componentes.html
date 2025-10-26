@@ -1,0 +1,28 @@
+<div class="container-fluid d-flex align-items-center flex-column">
+  <h1 class="display-2">Detalle de Usuario</h1>
+  @defer (when user) {
+  <div class="card card-shadow col-xl-4 col-lg-3 col-sm-6">
+    <div class="card-header bg-primary-subtle">
+      <div class="card-title p-2">
+        <h2 class="text-center">
+          {{ user.name.title }} {{ user.name.first }} {{ user.name.last }}
+        </h2>
+      </div>
+    </div>
+    <div class="card-body d-flex flex-column align-items-center">
+      <img class="my-img m-2" [src]="user.picture.large" alt="{{ user.name.first }}" />
+      <p><strong>Email: </strong>{{ user.email }}</p>
+      <p><strong>Cell: </strong>{{ user.cell }}</p>
+      <p><strong>País: </strong>{{ user.location.country }}</p>
+    </div>
+    <div class="card-footer">
+      <h5 class="text-center">UUID: {{ user.login.uuid }}</h5>
+    </div>
+  </div>
+  } @placeholder (minimum 500ms) {
+  <div class="loading-container">
+    <div class="spinner-border text-info" role="status"></div>
+    <h1 class="vissually-hidden">Loading...</h1>
+  </div>
+  }
+</div>

@@ -4,7 +4,7 @@ import { UserRandomComponent } from "./componentes/user-random-component/user-ra
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserRandomComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

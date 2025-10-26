@@ -1,0 +1,12 @@
+.loading-container{
+  margin-top: 20%;
+  width: 50hv !important;
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my-img{
+  width: 300px;
+}
+
