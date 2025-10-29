@@ -1,1 +1,76 @@
-<p>product-details works!</p>
+@if ( producto){
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div class="card shadow">
+      <div class="card-header bg-primary-subtle">
+        <div class="card-title py-2 px-1">
+          <h5>{{ producto.title }}</h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="avatar-container mt-3">
+            <div class="img-container">
+              <!-- Con ngStyle le aplicamos un estilo a este div, dependiendo de cada producto del
+array -->
+              <div
+                class="my-img"
+                [ngStyle]="{
+                  background: 'url(' + producto.image + ') center / 90px 90px no-repeat'
+                }"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <p class="card-text">
+              <strong>Category: </strong>
+              <span class="text-primary">{{ producto.category }}</span>
+            </p>
+            <p class="card-text">
+              <strong>Description: </strong><br />
+              <span class="small">{{ producto.description }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="row justify-content-between">
+          <div class="col-4 text-success fw-bold">
+            <!-- Pasamos el precio por un pipe date para especificar como lo queremos mostrar -->
+            {{ producto.price | currency : 'EUR' }}
+          </div>
+          <!-- Con ngClass definimos una clase en función de una condición.
+En nuestro caso si el rating es mayor de 3 lo pondremos verde y si no rojo -->
+          <div
+            class="col-3 fw-bold text-end"
+            [ngClass]="{
+              'text-success': producto.rating.rate > 3,
+              'text-danger': producto.rating.rate <= 3
+            }"
+          >
+            <!-- Pasamos el precio por un pipe date para especificar como
+lo queremos mostrar -->
+            {{ producto.rating.rate | number : '1.0-2' }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+} @else {
+<div class="row">
+  <div class="col-12 my-2">
+    <!-- Mostramos los elementos que tiene la API accediendo al objeto info
+de nuestra data -->
+    <h3 class="text-success text-center border shadow-sm p-2 rounded-1">
+      <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </h3>
+  </div>
+</div>
+}

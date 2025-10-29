@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-2">
+    <button class="btn btn-outline-success m-3" (click)="updateSignal()">UPDATE</button>
+    <button class="btn btn-outline-success m-3" (click)="updateSignal2()">UPDATE</button>
+  </div>
+  <div class="col-10 p-3">
+    <div class="row">
+      <div class="col-4">
+        <h2 class="text-success">Valor: {{ valor() }}</h2>
+        <h2 class="text-success">Valor * 2 ={{ valorDoble() }}</h2>
+        <h2 class="text-success">Valor + 2 ={{ valorPlus() }}</h2>
+      </div>
+      <div class="col-4">
+        <h2 class="text-primary">{{ nombre() }}</h2>
+      </div>
+      <div class="col-4">
+        <h2 class="text-primary">{{ nombreReadOnly() }}</h2>
+      </div>
+    </div>
+  </div>
+</div>

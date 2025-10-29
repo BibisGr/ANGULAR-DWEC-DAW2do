@@ -1,1 +1,47 @@
-<p>product-card works!</p>
+<div class="card shadow">
+  <div class="card-header bg-primary-subtle">
+    <div class="card-title py-2 px-1">
+      <h5>{{ product.title }}</h5>
+    </div>
+  </div>
+  <div class="avatar-container mt-3">
+    <div class="img-container">
+      <!-- Con ngStyle le aplicamos un estilo a este div, dependiendo de cada
+usuario del array -->
+      <div
+        class="my-img" [ngStyle]="{ background: 'url(' + product.image + ') center / 90px 90px no-repeat'}"
+      ></div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">
+      <strong>Category: </strong>
+      <span class="text-primary">{{ product.category }}</span>
+    </p>
+    <p class="card-text">
+      <strong>Description: </strong><br />
+      <span class="small">{{ product.description }}</span>
+    </p>
+  </div>
+  <div class="card-footer">
+    <div class="row justify-content-between">
+      <div class="col-4 text-success fw-bold">
+        <!-- Pasamos el precio por un pipe date para especificar como lo
+queremos mostrar -->
+        {{ product.price | currency : 'EUR' }}
+      </div>
+      <div
+        class="col-3 fw-bold"
+        [ngClass]="{
+          'text-success': product.rating.rate > 3,
+          'text-danger': product.rating.rate <= 3
+        }"
+      >
+        <!-- Pasamos el precio por un pipe date para especificar como lo
+queremos mostrar -->
+        {{ product.rating.rate | number : '1.0-2' }}
+      </div>
+    </div>
+  </div>
+</div>

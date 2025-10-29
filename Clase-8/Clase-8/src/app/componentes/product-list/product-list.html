@@ -1,1 +1,21 @@
-<p>product-list works!</p>
+<h1>Catalogo de Produtos</h1>
+@if (productos.length) {
+<div class="row">
+  <h2 class="text-primary text-center border shadow-sm p-2 rounded-1">
+    Hay un total de {{ productos.length }} en esta api
+  </h2>
+</div>
+<div class="row">
+  @for (item of productos; track item.id) {
+  <div class="col-xl-3 col-lg-4 col-sm-6 my-2" [routerLink]="['/product/details/', item.id]">
+    <app-product-card [product]="item" />
+  </div>
+  }
+</div>
+
+} @else {
+<h2 class="text-primary text-center border shadow-sm p-2 rounded-1">
+  <div class="spinner-border text-success" role="status"></div>
+  <span class="visually-hidden">Loading...</span>
+</h2>
+}
